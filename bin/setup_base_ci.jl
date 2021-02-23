@@ -1,7 +1,7 @@
 using Distributed
 import Nanosoldier, GitHub
 
-nodes = Dict(Any => addprocs(["nanosoldier7", "nanosoldier8"]))
+nodes = Dict(Any => addprocs(1)
 @everywhere import Nanosoldier
 
 auth = GitHub.authenticate(ENV["GITHUB_AUTH"])

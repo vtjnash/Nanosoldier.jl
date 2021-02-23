@@ -9,13 +9,13 @@ secret = ENV["GITHUB_SECRET"]
 
 config = Nanosoldier.Config(ENV["USER"], nodes, auth, secret;
                             workdir = joinpath(dirname(@__DIR__), "workdir"),
-                            trackrepo = "JuliaLang/julia",
-                            reportrepo = "JuliaCI/NanosoldierReports",
+                            trackrepo = "vtjnash/julia",
+                            reportrepo = "vtjnash/NanosoldierReports",
                             trigger = r"\@nanosoldier\s*`runtests\(.*?\)`",
-                            admin = "maleadt",
+                            admin = "vtjnash",
                             bucket = "julialang-reports/nanosoldier")
 
 server = Nanosoldier.Server(config)
 
 using Sockets
-run(server, IPv4(0,0,0,0), 8888)
+run(server, IPv4(0), 8888)

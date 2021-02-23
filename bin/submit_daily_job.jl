@@ -1,8 +1,8 @@
 import GitHub
 
 auth = GitHub.authenticate(ENV["GITHUB_AUTH"])
-repo = "JuliaLang/julia"
-sha = GitHub.branch(repo, "master").commit.sha
+repo = "vtjnash/julia"
+sha = GitHub.branch(repo, "notmaster").commit.sha
 
 message = """
           Executing the daily benchmark build, I will reply here when finished:
